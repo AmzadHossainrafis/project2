@@ -1,0 +1,31 @@
+batch_size : 32
+epochs : 10
+optimizer : adam
+loss : categorical_crossentropy
+
+model_chk_dir : B:\keggle segmentation\project2\model_chackpoint\model_weights
+csv_dir : B:\keggle segmentation\project2\model_chackpoint\csv
+
+model_name : unet
+patch_size : 256
+
+train_dir : B:\keggle segmentation\hubmap-organ-segmentation\\train_images\\
+mask_dir : B:\keggle segmentation\hubmap-organ-segmentation\\train_masks\\
+patch_mask_dir : B:\keggle segmentation\hubmap-organ-segmentation\\train_masks_patch\\
+patch_img_dir : B:\keggle segmentation\hubmap-organ-segmentation\\train_images_patch\\
+
+
+
+height : 256
+width : 256
+in_channels : 3
+num_classes : 2
+backbone : efficientnetb0
+
+
+
+
+
+
+csv : True 
+model_chk : True 

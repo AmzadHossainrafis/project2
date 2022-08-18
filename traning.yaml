@@ -1,5 +1,8 @@
 batch_size : 32
 epochs : 10
+steps_per_epoch : 100
+validation_steps : 50
+
 optimizer : adam
 loss : categorical_crossentropy
 
@@ -25,8 +28,8 @@ backbone : efficientnetb0
 
 
 
-
-
+shuffle : True
+rendom_seed : 42
 csv : True 
 checkpoint : True 
 tensorboard :

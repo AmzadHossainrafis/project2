@@ -7,7 +7,7 @@ import os
 
 
 class SelectCallbacks(keras.callbacks.Callback):
-    def __init__(self, val_dataset, model, config):
+    def __init__(self, config):
         """
         Summary:
             callback class for validation prediction and create the necessary callbacks objects
@@ -19,9 +19,6 @@ class SelectCallbacks(keras.callbacks.Callback):
             class object
         """
         super(keras.callbacks.Callback, self).__init__()
-
-        self.val_dataset = val_dataset
-        self.model = model
         self.config = config
         self.callbacks = []
 

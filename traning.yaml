@@ -28,4 +28,7 @@ backbone : efficientnetb0
 
 
 csv : True 
-model_chk : True 
+checkpoint : True 
+tensorboard :
+lr :
+early_stop :

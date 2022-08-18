@@ -5,6 +5,7 @@ import yaml
 from model_collection import get_model,config
 from tensorflow.keras import mixed_precision
 from utils.sort_img_and_mask_dir import make_img_mask_list
+from utils.train_val_split import train_val_split
 from dataloader import Dataloader
 
 
@@ -19,11 +20,8 @@ def train(config):
     x,y=make_img_mask_list()
 
     #split x, y  data into train img ,train mask and val img,val mask
-    train_img = x[:int(len(x)*0.8)]
-    train_mask = y[:int(len(y)*0.8)]
-    val_img = x[int(len(x)*0.8):]
-    val_mask = y[int(len(y)*0.8):]
-
+    train_img ,train_mask,val_img,val_mask=train_val_split(x,y,train_ratio=config["train_ratio"],rendom_seed=config["rendom_seed"],shuffle=config["shuffle"])
+  
 
     train_ds=Dataloader(batch_size=config["batch_size"], img_size=(config["height"],config["width"]), input_img_paths=train_img, target_img_paths=train_mask)
     val_ds= Dataloader(batch_size=config["batch_size"], img_size=(config["height"],config["width"]), input_img_paths=val_img, target_img_paths=val_mask)

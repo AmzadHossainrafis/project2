@@ -6,8 +6,8 @@ validation_steps : 50
 optimizer : adam
 loss : categorical_crossentropy
 
-model_chk_dir : B:\keggle segmentation\project2\model_chackpoint\model_weights
-csv_dir : B:\keggle segmentation\project2\model_chackpoint\csv
+checkpoint_dir : B:\keggle segmentation\project2\model_chackpoint\model_weights\
+csv_log_dir : B:\keggle segmentation\project2\model_chackpoint\csv\
 
 model_name : unet
 patch_size : 256
@@ -27,11 +27,11 @@ backbone : efficientnetb0
 
 
 
-
+patience: 3
 shuffle : True
 rendom_seed : 42
 csv : True 
 checkpoint : True 
-tensorboard :
-lr :
-early_stop :
+tensorboard : True
+lr : 0.0005
+early_stop : True

@@ -47,10 +47,10 @@ class SelectCallbacks(keras.callbacks.Callback):
             list of callbacks
         """
         if self.config['csv']:
-            self.callbacks.append(keras.callbacks.CSVLogger(os.path.join(self.config['csv_log_dir'], self.config['csv_log_name']), separator = ",", append = False))
+            self.callbacks.append(keras.callbacks.CSVLogger(os.path.join(self.config['csv_log_dir'], self.config['model_name'],".csv"), separator = ",", append = False))
         
         if self.config['checkpoint']:
-            self.callbacks.append(keras.callbacks.ModelCheckpoint(os.path.join(self.config['checkpoint_dir'], self.config['checkpoint_name']), save_best_only = True))
+            self.callbacks.append(keras.callbacks.ModelCheckpoint(os.path.join(self.config['checkpoint_dir'], self.config['model_name'],"h5"), save_best_only = True))
         
         if self.config['tensorboard']:
             self.callbacks.append(keras.callbacks.TensorBoard(log_dir = os.path.join(self.config['tensorboard_log_dir'], self.config['tensorboard_log_name'])))
